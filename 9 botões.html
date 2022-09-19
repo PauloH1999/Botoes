@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--font-family-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500&display=swap" rel="stylesheet">
+  <!--link css styles-->
+  <style>
+
+*,
+*::before,
+*::after{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background: #323232;
+}
+
+.title{  
+  margin: 5%;
+
+  font-family: 'Arial';
+  font-weight: 300;
+
+  color: white;
+  letter-spacing: .04em;
+}
+
+.container{
+  width: 700px;
+  height: auto;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+
+  margin: 5%; 
+}
+.button{
+  display: flex;
+  justify-content: center;
+
+  position: relative;
+  padding: 12px 0;
+
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  line-height: 28px;
+  font-weight: 300px;
+  font-size: 20px;
+
+  color: white;
+  border: 1px #5fe36a solid;
+  overflow: hidden;
+  cursor: pointer;
+}
+.button:hover{
+  content: "";
+  color: black;
+}
+
+.button::before{
+  content: "";
+  width: 100%;
+  height: 100%;
+
+  /* inicio da animação */
+  position: absolute;
+  background-color: #5fe36a;
+  z-index: -1;
+}
+
+                        /* Botão 1 */
+.item1::before{
+  width: 0;
+  height: 100%;
+
+  /* inicio da animação */
+  top: 0;
+  left: 0;
+
+  transition: all .5s;
+}
+.item1:hover::before{
+  width: 100%;
+  color: black;
+}
+                        /* Botão 2 */
+.item2::before{
+  width: 0;
+  height: 100%;
+
+  /* inicio da animação */
+  top: 0;
+  right: 0;
+
+  transition: all .5s;
+}
+.item2:hover::before{
+  width: 100%;
+  color: black;
+}
+                        /* Botão 3 */
+
+.item3::before{
+  width: 100%;
+  height: 0;
+
+  /* inicio da animação */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%) rotate(-45deg);
+
+  transition: all .5s;
+}
+.item3:hover::before{
+  height: 375%;
+}
+                        /* Botão 4 */
+.item4::before{
+  width: 100%;
+  height: 100%;
+
+  top: 0;
+  left: 0;
+
+  transform: scaleX(0);
+  transform-origin: right;
+
+  transition: transform 290ms ease-in;
+}
+.item4:hover::before{
+  transform: scale(1);
+  transform-origin: left;
+}
+                        /* Botão 5 */
+.item5::before{
+  width: 100%;
+  height: 100%;
+
+  top: 0;
+  left: 0;
+
+  transform: scaleX(0);
+  transform-origin: left;
+
+  transition: transform 290ms ease-in;
+}
+.item5:hover::before{
+  transform: scale(1);
+  transform-origin: right;
+}
+                        /* Botão 6 */
+.item6::before{
+  width: 100%;
+  height: 100%;
+
+  top: 0;
+  left: 0;
+
+  transform: scaleY(0);
+  transform-origin: top;
+
+  transition: transform 290ms ease-in;
+}
+.item6:hover::before{
+  transform: scale(1);
+  transform-origin: bottom;
+}
+                        /* Botão 7/8/9 */
+.button-inter{
+  display: flex;
+  justify-content: center;
+
+  position: relative;
+
+  margin: 0;
+  padding: 12px 0;
+
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  line-height: 28px;
+  font-weight: 300px;
+  font-size: 20px;
+
+  color: white;
+  border: 1px #5fe36a solid;
+  overflow: hidden;
+  cursor: pointer;
+
+  transition: .5s;
+}
+                        /* Botão 7 */
+.item7:hover{
+  background: #730bec url(./pixel_qwmcwc.png);
+  background-size: 100%;
+
+  transition-delay: .8s;
+  animation: animate1 .8s steps(8) forwards;
+}
+@keyframes animate1{
+  0%{
+    background-position-y:0;
+  }100%{
+    background-position-y:-480px;
+  }
+}
+                        /* Botão 8 span*/
+.item8 span{
+  position: relative;
+  z-index: 3;
+}
+
+.item8::before{
+  content: "";
+  width: calc(100% + 2px);
+  height: calc(100% - 12px);
+
+  position: absolute;
+  top: 6px;
+  left: -1px;
+  background-color: #5fe36a;
+
+  transition: .5s ease-in-out;
+  transform: scaleY(0);
+}
+.item8:hover::before{
+  transform: scaleY(1.5);
+}
+
+.item8::after{
+  content: "";
+
+  width: calc(100% - 12px);
+  height: calc(100% + 4px);
+
+  position: absolute;
+  top: -2px;
+  left: 6px;
+
+  background: #5fe36a;
+
+  transition: .5s ease-in-out;
+  transform: scaleX(0);
+}
+.item8:hover::after{
+  transform: scaleX(1.5);
+}
+.item8:hover{
+  color: black;
+  background-color: #5fe36a;
+  box-shadow: 0 0 10px #5fe36a, 0 0 15px #5fe36a, 0 0 30px #5fe36a;
+}
+
+                        /* Botão 9 span*/
+.item9{
+  position: relative;
+  overflow: hidden;
+
+  transition: .2s;
+}
+
+.item9:hover{
+  color: black;
+  background-color: #5fe36a;
+  box-shadow: 0 0 10px #5fe36a, 0 0 15px #5fe36a, 0 0 30px #5fe36a;
+
+  transition-delay: 1s;
+}
+
+.item9 span{
+  position: absolute;
+  display: block;
+}
+                        /* span1*/
+.item9 span:nth-child(1){
+  width: 100%;
+  height: 2px;
+
+  top: 0;
+  left: -100%;
+
+  background: linear-gradient(90deg, transparent, #5fe36a);
+}
+.item9:hover span:nth-child(1){
+  left: 100%;
+  transition: 1s;
+}
+                        /* span2*/
+.item9 span:nth-child(2){
+  width: 2px;
+  height: 100%;
+
+  top: -100%;
+  right: 0;
+
+  background: linear-gradient(90deg, transparent, #5fe36a);
+}
+.item9:hover span:nth-child(2){
+  top: 100%;
+  transition: 1s;
+  transition-delay: .25s;
+}
+                        /* span3*/
+.item9 span:nth-child(3){
+  width: 100%;
+  height: 2px;
+
+  bottom: 0;
+  right: -100%;
+
+  background: linear-gradient(90deg, transparent, #5fe36a);
+}
+.item9:hover span:nth-child(3){
+  right: 100%;
+  transition: 1s;
+  transition-delay: .5s;
+}
+                        /* span4*/
+.item9 span:nth-child(4){
+  width: 2px;
+  height: 100%;
+
+  bottom: -100%;
+  left: 0;
+
+  background: linear-gradient(90deg, transparent, #5fe36a);
+}
+.item9:hover span:nth-child(4){
+  bottom: 100%;
+  transition: 1s;
+  transition-delay: .75s;
+}
+
+
+
+  </style>
+  <!--title-->
+  <title>Efeitos Hover Personalizados</title>
+</head>
+<body>
+  <h1 class="title">Hover Effects</h1>
+  <div class="container">
+    <a class="button item1">Button 1</a>
+    <a class="button item2">Button 2</a>
+    <a class="button item3">Button 3</a>
+    <a class="button item4">Button 4</a>
+    <a class="button item5">Button 5</a>
+    <a class="button item6">Button 6</a>
+
+    <a class="button-inter item7">Button 7</a>
+    <a class="button-inter item8"><span>Button 8</span></a>
+    <a class="button-inter item9"><span></span><span></span><span></span><span></span>Button 9</a>
+  </div>
+</body>
+</html>
